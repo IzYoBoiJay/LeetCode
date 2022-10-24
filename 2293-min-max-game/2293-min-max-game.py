@@ -10,7 +10,6 @@ class Solution:
             
             newNums = []
             
-            #O(logn)
             for i in range(int(len(nums) / 2)):
                 
                 #Even
