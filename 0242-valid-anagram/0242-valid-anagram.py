@@ -1,41 +1,46 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         
-        #Base case 1: s and t are length 1 and 
-        if len(s) == 1 and len(t) == 1:
-            
-            return (s == t)
+        #Using collections.Counter() class
+        return Counter(s) == Counter(t)
         
-        #Base case 2: s and t are not the same length
-        if len(s) != len(t):
-            
-            return False
+#         # === Old Solution --> O(n + n) = O(n) time complexity and O(n) space complexity ===
         
-        hashMap = {}
+#         #Base case 1: s and t are length 1 and 
+#         if len(s) == 1 and len(t) == 1:
+            
+#             return (s == t)
         
-        for letter in s:
+#         #Base case 2: s and t are not the same length
+#         if len(s) != len(t):
             
-            if letter in hashMap.keys():
-                
-                hashMap[letter] += 1
-                
-            else:
-                
-                hashMap[letter] = 1
-                
-        for letter in t:
+#             return False
+        
+#         hashMap = {}
+        
+#         for letter in s:
             
-            if letter in hashMap.keys():
+#             if letter in hashMap.keys():
                 
-                hashMap[letter] -= 1
+#                 hashMap[letter] += 1
                 
-                if hashMap[letter] < 0:
+#             else:
+                
+#                 hashMap[letter] = 1
+                
+#         for letter in t:
+            
+#             if letter in hashMap.keys():
+                
+#                 hashMap[letter] -= 1
+                
+#                 if hashMap[letter] < 0:
                     
-                    return False
+#                     return False
                 
-            else:
+#             else:
                 
-                return False
+#                 return False
             
             
-        return True
+#         return True
