@@ -2,7 +2,7 @@ class Solution:
     def checkAlmostEquivalent(self, word1: str, word2: str) -> bool:
         
         #Base Case
-        if len(word1) == 3 and len(word2) == 3:
+        if len(word1) <= 3 and len(word2) <= 3:
             
             return True
         
